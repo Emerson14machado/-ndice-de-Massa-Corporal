@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC - Índice de Massa Corporal</title>
+</head>
+
+<body>
+
+    <h1>
+        <span class="indice">Índice</span> <span class="de">de</span> <span class="massa">Massa</span> <span
+            class="corporal">Corporal</span>
+    </h1>
+
+    <div class="la">
+        <label for="peso">Peso (kg)</label>
+
+        <input type="number" id="peso" name="peso">
+        <br>
+        <label for="altura">Altura </label>
+        <input type="number" id="altura" name="altura">
+    </div>
+    <br>
+    <div class="laa"><button onclick="calcularImc()">Calcular Imc</button></div>
+    <br>
+    <p>Seu índice de massa corporal é: <span id="resultado"></span></p>
+
+    <div class="immc">
+        <img class="" src="https://santahelenahospital.com.br/wp-content/uploads/2020/06/HSH_Tabela-Obesidade.png"
+            alt="">
+    </div>
+    <script>
+        function calcularImc() {
+            const peso = window.document.getElementById("peso").value;
+            const altura = window.document.getElementById("altura").value;
+            const Imc = peso / (altura ** 2)
+            document.getElementById("resultado").textContent = Imc.toFixed(2) //Seleciona a id do Html. //coloca um texto (textcontent). //Deixa somente dois números (imc.fixed(2)).
+        }
+        let tituloDinamico = document.title; //Troca o titulo da página quando a pessoa sair da página.
+        window.addEventListener("blur", () => {
+            document.title = "Volte pra casa"
+        })
+        window.addEventListener("focus", () => { //Volta ao titulo original.
+            document.title = tituloDinamico
+        })
+
+
+    </script>
+
+
+
+
+
+    <footer>Criador:Émerson H.S Machado|E-mail: emerson14machado@gmail.com</footer>
+</body>
+
+</html>
